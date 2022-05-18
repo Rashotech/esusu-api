@@ -46,4 +46,4 @@ Request data is validated using [Joi](https://joi.dev/).
 The validation schemas are defined in the `/validations` directory and are used in the routes by providing them as parameters to the `validate` middleware.
 
 ### Documentation
-The API docs can be found here - [Esusu API docs](#)
+The API docs can be found here - [Esusu API docs](https://documenter.getpostman.com/view/13581274/UyxnD4rb#68a0f47e-2235-407e-b4f8-312c04f9ab4b)
