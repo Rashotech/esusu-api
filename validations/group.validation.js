@@ -7,6 +7,7 @@ const createGroup = {
     maxCapacity: Joi.number().required(),
     fixedAmount: Joi.number().required(),
     visible: Joi.boolean(),
+    adminToJoin: Joi.boolean()
   }),
 };
 
@@ -28,9 +29,16 @@ const joinSavingsGroup = {
   }),
 };
 
+const contributeMoney = {
+  params: Joi.object().keys({
+    id: Joi.string().required(),
+  }),
+};
+
 module.exports = {
   createGroup,
   startSavingsById,
   getMembers,
-  joinSavingsGroup
+  joinSavingsGroup,
+  contributeMoney
 };
