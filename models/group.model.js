@@ -34,9 +34,7 @@ const groupSchema = new mongoose.Schema(
     visible: {
       type: Boolean,
       default: true,
-    },
-    members: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
-    nextRecipients: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
+    }
   },
   { timestamps: true }
 );
