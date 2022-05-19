@@ -1,17 +1,13 @@
-//function to generate random numbers between 0 and members.length
-getRandomInt = (max) => {
-  return Math.floor(Math.random() * Math.floor(max));
-};
-
-exports.shuffleMembers = (members) => {
-  let i = members.length;
-  let j = 0,
-    temp;
-  while (--i > 0) {
-    j = getRandomInt(i + 1);
-    temp = members[j];
-    members[j] = members[i];
-    members[i] = temp;
-  }
-  return members;
+exports.generateRandom = (members) => {
+    const range = [...Array(members.length).keys()].map(x => x + 1);
+    const random = [];
+    for (let a = range, i = a.length; i--;) {
+      const RandomNumber = a.splice(Math.floor(Math.random() * (i + 1)), 1)[0];
+      const mem = {
+          rank: RandomNumber,
+          id: members[i]._id
+      }
+      random.push(mem)
+    };
+    return random;
 };
