@@ -9,7 +9,7 @@ const verifyCallback = (req, resolve, reject) => async (err, user, info) => {
   }
   const group = await Group.findOne({ uniqueId: req.params.id });
 
-  if(user._id.toString() !== group.admin.toString()) {
+  if((user._id.toString() !== group?.admin.toString())) {
     return reject(new ApiError(httpStatus.FORBIDDEN, 'UnAuthorized'));
   }
   req.user = user;
