@@ -17,6 +17,11 @@ const joinSavingsGroup = catchAsync(async (req, res) => {
   res.send(group);
 });
 
+const contributeMoney = catchAsync(async (req, res) => {
+  const group = await groupService.contributeMoney(req.params.id, req.user._id);
+  res.send(group);
+});
+
 const getVisibleGroups = catchAsync(async (req, res) => {
   const groups = await groupService.getVisibleGroups();
   res.send(groups);
@@ -32,5 +37,6 @@ module.exports = {
   startSavingsById,
   getVisibleGroups,
   getMembers,
-  joinSavingsGroup
+  joinSavingsGroup,
+  contributeMoney
 };
